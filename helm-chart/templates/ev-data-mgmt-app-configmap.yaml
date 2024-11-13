@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ev-data-mgmt-app-config
+data:
+  active-profile: "prod"

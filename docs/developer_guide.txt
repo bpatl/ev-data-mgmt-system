@@ -1,0 +1,64 @@
+Installs
+=========
+#Install PostgreSQL on windows
+winget search --id PostgreSQL.PostgreSQL --source winget
+winget install -e --id PostgreSQL.PostgreSQL.17
+
+#Install Helm
+winget install Helm.Helm
+
+Build:
+======
+bin/build.bat
+bin/build-tag-docker-image.bat
+docker images
+
+Running:
+========
+1. start docker on your desk
+2. minikube start
+3. Install and upgrade backend using helm on k8s
+    helm install ev-data-mgmt-chart helm-chart
+    helm upgrade ev-data-mgmt-chart helm-chart
+
+4.Check status
+    kubectl get all
+5.Get backend ev-data-mgmt-service app URL
+    minikube service --all
+
+Debug
+=====
+kubectl logs -f ev-data-mgmt-app-deployment-bc4576bd8-d6kf8
+kubectl get all
+
+Cleanup:
+========
+docker rmi -f ev-data-mgmt
+helm delete ev-data-mgmt-chart
+
+Ref Links:
+==========
+Spring Initializr : https://start.spring.io/
+https://www.youtube.com/watch?v=v1IFQWzuSrw
+https://github.com/callicoder/spring-boot-postgresql-jpa-hibernate-rest-api-demo/blob/master/pom.xml
+https://github.com/RameshMF?tab=repositories&q=spring&type=&language=&sort=
+https://talesofdancingcurls.medium.com/spring-boot-with-postgresql-a-step-by-step-guide-c451848f0184
+
+Group : com.usgov.ev.dms
+ev-data-mgmt-system
+Electric Vehicle Population Data Management System for US Government built on Spring Boot
+com.usgov.ev.dms
+Spring Boot Actuator
+Lombok
+Spring Data JPA
+Spring Web
+Flyway Migration
+PostgreSQL Driver
+
+UI: React with TS using Vite:
+============================
+https://github.com/ed-roh/gym-typescript
+
+
+
+

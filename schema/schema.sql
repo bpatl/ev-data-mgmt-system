@@ -1,0 +1,20 @@
+CREATE TABLE vehicles (
+    id SERIAL PRIMARY KEY,
+    vin VARCHAR(17) UNIQUE NOT NULL,
+    county VARCHAR(100),
+    city VARCHAR(100),
+    state VARCHAR(2),
+    postal_code VARCHAR(10),
+    model_year INT,
+    make VARCHAR(50),
+    model VARCHAR(50),
+    electric_vehicle_type VARCHAR(50),
+    cafv_eligibility VARCHAR(50),
+    electric_range INT,
+    base_msrp DECIMAL,
+    legislative_district INT,
+    dol_vehicle_id BIGINT,
+    vehicle_location POINT,
+    electric_utility VARCHAR(100),
+    census_tract VARCHAR(20)
+);

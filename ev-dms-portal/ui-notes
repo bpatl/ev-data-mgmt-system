@@ -1,0 +1,12 @@
+ev-dms-portal
+
+npm create vite@latest ev-dms-portal --template react-ts
+Ok to proceed? (y) y
+√ Select a framework: » React
+√ Select a variant: » TypeScript
+
+cd ev-dms-portal
+npm install
+npm run dev
+
+npm install react-router-dom axios

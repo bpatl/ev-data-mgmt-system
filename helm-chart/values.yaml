@@ -1,0 +1,22 @@
+app:
+  name: ev-data-mgmt
+  database:
+    name: ev_population_db
+    user: postgres
+    password: postgres
+
+postgres:
+  image: postgres:14
+  storageSize: 4Gi
+
+evdms:
+  image: ev-data-mgmt:1.0
+  replicas: 1
+
+ingress:
+  enabled: true
+  host: evdatamgmt.com
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"

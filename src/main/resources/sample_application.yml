@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ev-data-mgmt-system
+
+  security:
+    user:
+      name: usgov
+      password: nsa123@pwd
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ev_population_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update

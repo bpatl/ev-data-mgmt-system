@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ev-data-mgmt-app-deployment
+  labels:
+    app: ev-data-mgmt-deployment
+spec:
+  replicas: {{ .Values.evdms.replicas }}
+  selector:
+    matchLabels:
+      app: ev-data-mgmt-service
+  template:
+    metadata:
+      labels:
+        app: ev-data-mgmt-service
+    spec:
+      containers:
+        - name: ev-data-mgmt-service
+          image: {{ .Values.evdms.image }}
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_USR
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: psql-user
+            - name: DB_PSW
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: psql-password
+            - name: POSTGRES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: postgres-service-url
+            - name: EVDMS_PROFILES_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: ev-data-mgmt-app-config
+                  key: active-profile
