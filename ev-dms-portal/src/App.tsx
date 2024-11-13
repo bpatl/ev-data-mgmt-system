@@ -11,6 +11,7 @@ import UpdateVehicleBaseMsrp from './pages/UpdateVehicleBaseMsrp';
 import ContactUs from './pages/ContactUs';
 import Login from './pages/Login';
 
+// use toekn
 const isAuthenticated = () => {
   return !!localStorage.getItem('authToken');
 };

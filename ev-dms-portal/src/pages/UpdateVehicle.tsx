@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 
+// All cols in csv as fields
 interface Vehicle {
   id: number;
   vin: string;

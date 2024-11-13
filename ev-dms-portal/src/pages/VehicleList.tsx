@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../api/axios';
 
+// All fields in CSV
 interface Vehicle {
   id: number;
   vin: string;

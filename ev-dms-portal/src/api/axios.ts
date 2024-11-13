@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:58867/api',
+  baseURL: 'http://127.0.0.1:8080/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Add basic auth header if credentials are available
+// basic auth
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('authToken');
   if (token) {

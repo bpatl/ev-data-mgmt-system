@@ -38,7 +38,7 @@ const CreateVehicle: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Form validation
+    // validation
     if (!vehicle.vin || !vehicle.make || !vehicle.model || !vehicle.modelYear) {
       setError('Please fill out all mandatory fields.');
       return;
@@ -72,7 +72,6 @@ const CreateVehicle: React.FC = () => {
           <label>Model*</label>
           <input type="text" name="model" value={vehicle.model} onChange={handleChange} required />
         </div>
-        {/* Add other fields as optional */}
         <button type="submit">Create Electric Vehicle</button>
       </form>
       {error && <p style={{ color: error === 'Vehicle created successfully!' ? 'green' : 'red' }}>{error}</p>}

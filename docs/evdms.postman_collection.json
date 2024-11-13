@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "c80a944f-fb08-4a39-9c06-49006f64cbf5",
+		"name": "evdms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1387535",
+		"_collection_link": "https://winter-space-854910.postman.co/workspace/Latest~54c2dcad-869a-4205-9f55-a20c7d8a681d/collection/1387535-c80a944f-fb08-4a39-9c06-49006f64cbf5?action=share&source=collection_link&creator=1387535"
+	},
+	"item": [
+		{
+			"name": "create-ev",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "nsa123@pwd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usgov",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dXNnb3Y6bnNhMTIzQHB3ZA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vin\": \"5UXTA6C0XM\",\r\n  \"county\": \"Kitsap\",\r\n  \"city\": \"Seabeck\",\r\n  \"state\": \"WA\",\r\n  \"postalCode\": \"98380\",\r\n  \"modelYear\": 2021,\r\n  \"make\": \"BMW\",\r\n  \"model\": \"X5\",\r\n  \"electricVehicleType\": \"Plug-in Hybrid Electric Vehicle (PHEV)\",\r\n  \"cafvEligibility\": \"Clean Alternative Fuel Vehicle Eligible\",\r\n  \"electricRange\": 30,\r\n  \"baseMsrp\": 0,\r\n  \"legislativeDistrict\": 35,\r\n  \"dolVehicleId\": 267929112,\r\n  \"vehicleLocation\": \"POINT (-122.8728334 47.5798304)\",\r\n  \"electricUtility\": \"PUGET SOUND ENERGY INC\",\r\n  \"censusTract\": 53035091301\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-ev",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "nsa123@pwd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usgov",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dXNnb3Y6bnNhMTIzQHB3ZA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"make\": \"Tesla\",\r\n    \"model\": \"Model Y\",\r\n    \"baseMsrp\": 60000.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-create-ev",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "nsa123@pwd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usgov",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dXNnb3Y6bnNhMTIzQHB3ZA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vin\": \"5UXTA6C0XM\",\r\n  \"county\": \"Kitsap\",\r\n  \"city\": \"Seabeck\",\r\n  \"state\": \"WA\",\r\n  \"postalCode\": \"98380\",\r\n  \"modelYear\": 2021,\r\n  \"make\": \"BMW\",\r\n  \"model\": \"X5\",\r\n  \"electricVehicleType\": \"Plug-in Hybrid Electric Vehicle (PHEV)\",\r\n  \"cafvEligibility\": \"Clean Alternative Fuel Vehicle Eligible\",\r\n  \"electricRange\": 30,\r\n  \"baseMsrp\": 0,\r\n  \"legislativeDistrict\": 35,\r\n  \"dolVehicleId\": 267929112,\r\n  \"vehicleLocation\": \"POINT (-122.8728334 47.5798304)\",\r\n  \"electricUtility\": \"PUGET SOUND ENERGY INC\",\r\n  \"censusTract\": 53035091301\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

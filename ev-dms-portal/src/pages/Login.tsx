@@ -13,7 +13,7 @@ const Login: React.FC = () => {
     const token = btoa(`${username}:${password}`);
 
     try {
-      // Test login by making a simple authenticated request
+      // Test login
       await api.get('/vehicles', {
         headers: {
           Authorization: `Basic ${token}`,
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
 
       // If successful, store token in localStorage
       localStorage.setItem('authToken', token);
-      navigate('/'); // Redirect to home page
+      navigate('/'); // Redirect
     } catch (err) {
       setError('Invalid credentials or server error');
     }
